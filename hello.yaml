@@ -1,0 +1,16 @@
+"fruit" : "apple"
+"rollno" : 6
+--- # These 3 dashes will tell YAML that these are three different documents
+#lists
+- apple
+- mango
+- banana
+---
+cities:
+ - new delhi
+ - mumbai
+ - pune
+
+# YAML is a collection of 0 or more number of documents
+# The below three dots reprents that this is the end of file
+ ...
