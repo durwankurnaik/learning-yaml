@@ -1,0 +1,110 @@
+student: !!seq
+ - marks
+ - name
+ - roll_no
+
+# The above sequence can be written like this 
+ another_students: [marks, name, roll_no]
+
+ # Sometime the keys of the seq will be empty, this is known as the sparse seq
+ sparse seq: 
+  - hey
+  - how
+  -
+  - Null
+  - sup
+
+# Nested sequence
+-
+ - mango
+ - apple
+ - orange
+-
+ - orange
+ - blue
+ - teal
+
+ # Key value pairs are called maps
+ # !!map , this is how it is represented
+
+ # Nested mappings, map within a map
+person: 
+ name: Durwankur
+ age: 20
+ profession: Student
+
+# The above map can also be represented as follows
+person: {
+  {
+    name: Durwankur,
+    age: 20,
+    profession: Student
+  }
+}
+# This is more like javascripty way of representing
+
+# Pairs: keys may have duplicate values
+# !!pairs
+
+pair example: !!pairs
+ - job: Student
+ - job: Self taught programmer
+ # This will be an array of hash tables
+
+# The above is same as follows
+pair examples: !!pairs [job: Student, job: Self taught programmer]
+
+# Set: They will allow us to have unique values
+names: !!set
+ ? Durwankur
+ ? Tanay
+ ? Kunal
+ ? Rahul
+
+# Dictionaries: !!omap
+people: !!omap
+ - Durwankur:
+    name: Durwankur Naik
+    age: 20
+    height: 180
+  - Tanay:
+     name: Tanay OP
+     age: 15
+     height: 165
+
+# Reusing some properties using anchors
+likings: &likes
+  fav fruit: mango
+  dislikes: Null
+
+person1:
+  name: Durwankur Naik
+  fav fruit: mango
+  dislikes: Null
+
+person2:
+  name: Tanay Naik
+  fav fruit: mango
+  dislikes: Null
+
+person3:
+  name: Kunal Naik
+  fav fruit: mango
+  dislikes: Null
+# The above code gets repetitive, hence we use reuse the properties like shown below
+
+person4:
+  name: Balkrishna Naik
+  <<: *likes
+
+person5:
+  name: Some Person
+  <<: *likes
+  dislikes: banana # In this way, we can override the properties from the anchors
+  # Just write the name of the property you wanna override
+
+# The person5 will look something like this
+person5:
+  name: Some Person
+  fav fruit: mango
+  dislikes: banana

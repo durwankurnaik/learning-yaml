@@ -3,3 +3,53 @@ name: Durwankur Naik
 hobby: "Coding"
 motive: 'To be a great developer and a full stack engineer'
 
+bio: |
+hey, my name is Durwankur and I am software developer.
+I love to code and my goal is to become a full stack engineer.
+
+# Write a single line in multiple lines
+message: >
+this will look like
+multiple lines, but
+they are all in a
+same line when
+it is stored.
+
+# The above is same as this
+another_message: this will look like multiple lines, but they are all in a same line when it is stored
+
+number: 8363 # Integer
+marks: 98.43 # Floats
+booleanValue: No # In YAML, we write No for false in Boolean
+# Boolean values can be also written as n, N, false, False, FALSE
+# Same for true, Yes, y, Y, true, True, TRUE
+
+# Specify the type
+zero: !!int 0
+positiveNum: !!int 45
+negativeNum: !!int -45
+binaryNum: !!int 0b11011
+octalNum: !!int 067365
+hexadecimalNum: !!int 0x45
+commaValues: !!int +540_000 # This is for 540,000
+exponetialNums: 6.023E56
+
+# Flotaing point numbers
+marks: !!float  91.80
+infinite: !!float .inf
+not a num: .nan
+
+# Booleans
+boolean: !!bool Yes
+
+# Strings
+something: !!str This is a string
+
+# null or none
+surname: !!null Null # it can be also represented as null, NULL, ~
+~: This is a null key
+
+# Dates and time
+date: !!timestamp 2002-03-14 # The date format is YYYY-MM-DD
+india time zone: 2022-01-25T10:58:40.10 +5:30
+no time zone: 2022-01-25T11:02:40.10 # It will assume the timezone as UTC

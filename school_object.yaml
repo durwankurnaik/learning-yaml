@@ -1,0 +1,7 @@
+School:
+  - name: MTS
+    principal: Someone
+    students:
+    - rno: 25
+      name: Durwankur Naik
+      marks: 91.80
